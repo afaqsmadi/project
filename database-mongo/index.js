@@ -32,7 +32,7 @@ let save = (data) => {
   // TODO: Your code here
   // This function should save a repo or repos to
   // the MongoDB
-  let book = new Item ({name:data.name}) 
+  let book = new Item ({name:data}) 
   book.save(function (err, repo) {
     if (err) return console.error(err);
     //fluffy.speak();

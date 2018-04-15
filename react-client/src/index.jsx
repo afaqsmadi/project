@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = { 
       book:'',
       items: []
+    
     }
     this.onChange=this.onChange.bind(this);
     this.save=this.save.bind(this);
@@ -51,9 +52,15 @@ class App extends React.Component {
     
       url: '/items',
       success: function(data){
-        alert('success')
+        
         x.state.items.push(data)
         console.log(x.state.items)
+        var arr=[]
+        for (var i = 0; i < data.length; i++) {
+          if(data[i].name){
+          arr.push(data[i].name)}
+        }
+        alert(JSON.stringify(arr))
       },
       error: function(){
         alert('error')

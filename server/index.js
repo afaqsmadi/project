@@ -23,6 +23,7 @@ app.get('/items', function (req, res) {
 });
 
 app.post('/items', function (req, res) {
+	console.log(req.body.book)
 	var t = req.body.book
 	items.save(t)
 	res.send(t)
